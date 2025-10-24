@@ -1,0 +1,23 @@
+class RemoveDuplicates {
+    public int removeDuplicates(int[] nums) {
+        int[] unique=new int[nums.length];
+        int k=0;
+        for(int i=0;i<nums.length;i++){
+            boolean isDup=false;
+            for(int j=0;j<k;j++){
+                if(nums[i]==unique[j]){
+                    isDup=true;
+                    break;
+                }
+            }
+            if(!isDup){
+                unique[k]=nums[i];
+                k++;
+            }
+        }
+            for(int i=0;i<k;i++){
+                nums[i]=unique[i];    
+        }
+        return k;
+    }
+}
